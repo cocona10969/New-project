@@ -3,6 +3,7 @@ import BorderGlow from './components/BorderGlow'
 import MagicRings from './components/MagicRings'
 import ColorBends from './components/ColorBends'
 import SoftAurora from './components/SoftAurora'
+import LiquidEther from './components/LiquidEther'
 
 const Arrow = ({ diagonal = false }) => (
   <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -837,6 +838,17 @@ function App() {
         </div>
       </section>
 
+      <div className="liquid-panels" aria-hidden="false">
+        <div className="panels-liquid-bg" aria-hidden="true">
+          <LiquidEther
+            colors={['#160816', '#ff5da8', '#8a5cff', '#b497cf']}
+            autoSpeed={0.42}
+            autoIntensity={1.18}
+            resolution={0.65}
+            className="portfolio-liquid-ether"
+          />
+        </div>
+
       <section className="about section" id="about">
         <div className="shell">
           <div className="section-kicker"><span>02</span><p>关于我</p></div>
@@ -896,7 +908,7 @@ function App() {
           <div className="works-heading">
             <h2>VISUAL<br /><em>DISPLAY</em></h2>
             <div className="works-falling-character" aria-hidden="true">
-              <img src="/works-character-crouch.png" alt="" />
+              <img src="/works-character-crouch-cutout.png" alt="" />
             </div>
             <p>一些关于速度、质感、内容与未来的视觉实验。<br />真实项目图片将在下一阶段替换。</p>
           </div>
@@ -981,6 +993,7 @@ function App() {
           </div>
         </div>
       </section>
+      </div>
 
       <footer className="contact" id="contact">
         <div className="contact-rings" aria-hidden="true">

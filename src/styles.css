@@ -31,6 +31,39 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .noise { position: absolute; inset: 0; opacity: .06; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E"); mix-blend-mode: soft-light; }
 svg { width: 18px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 
+.liquid-panels {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  background:
+    radial-gradient(ellipse at 52% 46%, rgba(255,93,168,.04), transparent 44%),
+    linear-gradient(180deg, rgba(7,6,11,.78), rgba(6,6,9,.84) 52%, rgba(5,5,7,.9));
+}
+
+.panels-liquid-bg {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: .58;
+  mix-blend-mode: screen;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 7%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0, #000 7%, #000 92%, transparent 100%);
+}
+
+.portfolio-liquid-ether {
+  position: absolute;
+  inset: -2% 0;
+}
+
+.liquid-panels > .about,
+.liquid-panels > .works,
+.liquid-panels > .strengths {
+  position: relative;
+  z-index: 1;
+}
+
 
 .hero { min-height: 100vh; margin: 0; position: relative; overflow: hidden; border: 0; border-radius: 0; background: transparent; isolation: isolate; }
 .hero::before { content: ''; position: absolute; z-index: 0; inset: 0; pointer-events: none; background: radial-gradient(ellipse 74% 48% at 50% 48%, rgba(99,72,132,.36), rgba(41,25,61,.22) 44%, transparent 72%), radial-gradient(ellipse 95% 78% at 50% 8%, rgba(38,19,57,.88), rgba(8,6,12,.94) 66%, #07060b 100%); }
