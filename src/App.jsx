@@ -948,9 +948,6 @@ function App() {
                   <span className="capability-no">{item.id}</span>
                   <span className="capability-type">{item.type}</span>
                   <h3>{item.title}<i /></h3>
-                  <div className="capability-tags" aria-hidden="true">
-                    {item.points.map((point) => <em key={point}>{point}</em>)}
-                  </div>
                   <span className="capability-shape" aria-hidden="true" />
                 </button>
               ))}
