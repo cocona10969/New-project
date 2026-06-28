@@ -284,7 +284,6 @@ const capabilityModules = [
     title: '品牌视觉体系搭建',
     type: 'CORE',
     points: ['风格识别', '视觉规范', '传播一致'],
-    featured: true,
   },
   {
     id: '03',
@@ -627,21 +626,40 @@ function App() {
   useEffect(() => {
     const hero = document.querySelector('#home')
     const about = document.querySelector('#about')
-    if (!hero && !about) return undefined
+    const works = document.querySelector('#works')
+    const strengths = document.querySelector('#strengths')
+    const contact = document.querySelector('#contact')
+    const motionSections = [hero, about, works, strengths, contact].filter(Boolean)
+    if (!motionSections.length) return undefined
 
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (reduceMotion) {
       hero?.classList.add('hero-visible')
       about?.classList.add('about-visible')
+      works?.classList.add('works-visible')
+      strengths?.classList.add('strengths-visible')
+      contact?.classList.add('contact-visible')
       return undefined
     }
 
     hero?.classList.add('hero-motion-ready')
     about?.classList.add('about-motion-ready')
+    works?.classList.add('works-motion-ready')
+    strengths?.classList.add('strengths-motion-ready')
+    contact?.classList.add('contact-motion-ready')
+
+    const visibleClasses = {
+      home: 'hero-visible',
+      about: 'about-visible',
+      works: 'works-visible',
+      strengths: 'strengths-visible',
+      contact: 'contact-visible',
+    }
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        const visibleClass = entry.target.id === 'home' ? 'hero-visible' : 'about-visible'
+        const visibleClass = visibleClasses[entry.target.id]
+        if (!visibleClass) return
         entry.target.classList.toggle(visibleClass, entry.isIntersecting)
 
         if (entry.target.id === 'home') {
@@ -653,8 +671,7 @@ function App() {
       rootMargin: '0px 0px -12% 0px',
     })
 
-    if (hero) observer.observe(hero)
-    if (about) observer.observe(about)
+    motionSections.forEach((section) => observer.observe(section))
     return () => {
       observer.disconnect()
       document.documentElement.classList.remove('hero-visible')
@@ -939,11 +956,9 @@ function App() {
               ))}
             </div>
             <div className="capability-copy">
-              <span className="eyebrow">CAPABILITIES / APPROACH</span>
               <h2>DESIGN<br /><em>ADVANTAGE</em></h2>
               <p>
-                从视觉概念、品牌调性到 AIGC 创意生产，我更关注设计如何被看见、被理解、被使用，
-                把想法整理成可复用、可执行、可持续优化的创意系统。
+                扎实的美术功底、良好的创意思维和理解能力，能及时把握客户需求，善于与人沟通，能够承受压力，能独立完成相关视觉或界面的创意、设计到完稿全套工作流程，保证工作质量。持续关注AI如何重塑创意生产，乐于探索生成式AI的新应用与新方法，具备优秀的跨团队协作能力与自驱力。
               </p>
             </div>
           </div>
