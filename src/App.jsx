@@ -91,20 +91,23 @@ const projects = [
 
 const aigcVideos = [
   {
-    title: 'AIGC动画 01',
-    meta: 'AI ANIMATION',
+    label: '落地项目',
+    title: '西游后传天地重光',
+    meta: '西游记衍生AI漫剧',
     src: '/videos/aigc-01.mp4',
     note: '视频文件暂时无法加载，请确认 public/videos/aigc-01.mp4 是否存在。',
   },
   {
-    title: 'AIGC动画 02',
-    meta: 'SCENE / LIGHTING',
+    label: 'DEMO',
+    title: '西游后传天地重光',
+    meta: '打斗抽卡测试',
     src: '/videos/aigc-02.mp4',
     note: '视频文件暂时无法加载，请确认 public/videos/aigc-02.mp4 是否存在。',
   },
   {
-    title: 'AIGC动画 03',
-    meta: 'BRAND FILM TEST',
+    label: 'DEMO',
+    title: '公爹为夫密林场景',
+    meta: '场景情绪渲染测试',
     src: '/videos/aigc-03.mp4',
     note: '视频文件暂时无法加载，请确认 public/videos/aigc-03.mp4 是否存在。',
   },
@@ -235,6 +238,18 @@ const galleryProjects = {
         meta: 'GRAPHIC ILLUSTRATION',
         src: '/images/illustration/illustration-14.jpg',
         note: '图片文件暂时无法加载，请确认 public/images/illustration/illustration-14.jpg 是否存在。',
+      },
+      {
+        title: '平面插画 15',
+        meta: 'GRAPHIC ILLUSTRATION',
+        src: '/images/illustration/illustration-15.jpg',
+        note: '图片文件暂时无法加载，请确认 public/images/illustration/illustration-15.jpg 是否存在。',
+      },
+      {
+        title: '平面插画 16',
+        meta: 'GRAPHIC ILLUSTRATION',
+        src: '/images/illustration/illustration-16.png',
+        note: '图片文件暂时无法加载，请确认 public/images/illustration/illustration-16.png 是否存在。',
       },
     ],
   },
@@ -380,7 +395,7 @@ function VideoShowcaseModal({ open, videos, activeIndex, onSelect, onClose }) {
                 type="button"
                 onClick={() => onSelect(index)}
               >
-                <span>{String(index + 1).padStart(2, '0')}</span>
+                <span>{String(index + 1).padStart(2, '0')}{video.label ? <b>{video.label}</b> : null}</span>
                 <strong>{video.title}</strong>
                 <em>{video.meta}</em>
               </button>
@@ -841,13 +856,14 @@ function App() {
               <p className="lead">我是一名拥有 7 年经验的视觉设计师，也是一名持续探索生成式 AI 的创作者。动画专业训练赋予我对造型、分镜和叙事的敏感，而商业项目经验让我更在意创意如何真正被看见、被理解、被使用。</p>
               <p className="secondary">从品牌主视觉、电商内容到 AIGC 图像与视频，我擅长在传统设计方法与 AI 工作流之间切换，为团队搭建可复用、可规模化的创意系统。</p>
               <div className="stats">
-                <div><strong>07<sup>+</sup></strong><span>YEARS OF<br />DESIGN EXPERIENCE</span></div>
-                <div><strong>03</strong><span>CORE<br />DISCIPLINES</span></div>
-                <div><strong>0→1</strong><span>XIAOHONGSHU<br />OPERATIONS</span></div>
+                <div><strong>07<sup>+</sup></strong><span>工作经验</span></div>
+                <div><strong>30<sup>+</sup></strong><span>年均落地项目</span></div>
+                <div><strong>95<sup>%+</sup></strong><span>客户满意度</span></div>
               </div>
               <div className="contact-lines">
                 <a href="mailto:978580173@qq.com">978580173@qq.com <Arrow diagonal /></a>
                 <a href="tel:19928000730">+86 199 2800 0730 <Arrow diagonal /></a>
+                <button type="button" onClick={() => navigator.clipboard?.writeText('as978580173')}>WECHAT · as978580173 <Arrow diagonal /></button>
               </div>
             </div>
           </div>
@@ -948,7 +964,6 @@ function App() {
                   <span className="capability-no">{item.id}</span>
                   <span className="capability-type">{item.type}</span>
                   <h3>{item.title}<i /></h3>
-                  <span className="capability-shape" aria-hidden="true" />
                 </button>
               ))}
             </div>
@@ -957,6 +972,11 @@ function App() {
               <p>
                 扎实的美术功底、良好的创意思维和理解能力，能及时把握客户需求，善于与人沟通，能够承受压力，能独立完成相关视觉或界面的创意、设计到完稿全套工作流程，保证工作质量。持续关注AI如何重塑创意生产，乐于探索生成式AI的新应用与新方法，具备优秀的跨团队协作能力与自驱力。
               </p>
+              <img
+                className="capability-character"
+                src="/images/character/strengths-designer-cutout.png"
+                alt="AI 设计师人物形象"
+              />
             </div>
           </div>
         </div>
@@ -994,7 +1014,10 @@ function App() {
           <div className="contact-main">
             <p className="eyebrow">HAVE AN IDEA IN MIND?</p>
             <h2><span>LOVE</span><br /><em>AND</em><br /><span>LEARN.</span></h2>
-            <a className="mail-link" href="mailto:978580173@qq.com">978580173@qq.com <Arrow diagonal /></a>
+            <div className="contact-action-row">
+              <a className="mail-link" href="mailto:978580173@qq.com">978580173@qq.com <Arrow diagonal /></a>
+              <button className="wechat-link" type="button" onClick={() => navigator.clipboard?.writeText('as978580173')}>WECHAT · as978580173 <Arrow diagonal /></button>
+            </div>
           </div>
           <div className="contact-footer">
             <p>视觉设计 / AIGC 内容 / 品牌合作 / 小红书运营</p>
