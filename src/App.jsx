@@ -49,49 +49,261 @@ const PhotoshopBar = () => (
 const projects = [
   {
     id: '01',
-    title: 'ENDURANCE / 疾速边界',
-    type: '赛事品牌视觉 · AI ART DIRECTION',
+    title: 'AIGC动画',
+    type: 'AI ANIMATION',
     caption: '为马拉松与越野赛事构建高能量视觉叙事，从主视觉延展至线上传播与文创物料。',
     tone: 'ember',
-    tag: 'BRAND VISUAL',
+    tag: '',
     glow: '18 92 66',
     colors: ['#ff7a45', '#f43f8b', '#ff5da8'],
   },
   {
     id: '02',
-    title: 'NEON SPECIMEN',
-    type: 'AIGC 产品影像 · CAMPAIGN',
+    title: 'AIGC与品牌视觉',
+    type: 'AIGC & BRAND VISUAL',
     caption: '以生成式工作流重构产品场景、材质与光影，探索传统电商设计之外的视觉可能。',
     tone: 'violet',
-    tag: 'AIGC CAMPAIGN',
+    tag: '',
     glow: '270 88 78',
     colors: ['#a78bfa', '#e879f9', '#67e8f9'],
   },
   {
     id: '03',
-    title: 'SOCIAL GRAVITY',
-    type: '小红书内容系统 · SOCIAL MEDIA',
+    title: '平面插画',
+    type: 'GRAPHIC ILLUSTRATION',
     caption: '围绕品牌调性搭建可复用的图文模板与内容语言，让高频创意生产保持一致与鲜活。',
     tone: 'blue',
-    tag: 'XIAOHONGSHU',
+    tag: '',
     glow: '198 92 70',
     colors: ['#38bdf8', '#818cf8', '#c084fc'],
   },
   {
     id: '04',
-    title: 'MOTION PROTOCOL',
-    type: '短视频分镜 · AI MOTION',
+    title: '创意宣传',
+    type: 'CREATIVE PROMOTION',
     caption: '从镜头语言、节奏到生成参数，设计 15–30 秒商业短片的完整视觉路径。',
     tone: 'silver',
-    tag: 'MOTION DESIGN',
+    tag: '',
     glow: '258 62 82',
     colors: ['#e2e8f0', '#a78bfa', '#67e8f9'],
   },
 ]
 
+const aigcVideos = [
+  {
+    title: 'AIGC动画 01',
+    meta: 'AI ANIMATION',
+    src: '/videos/aigc-01.mp4',
+    note: '视频文件暂时无法加载，请确认 public/videos/aigc-01.mp4 是否存在。',
+  },
+  {
+    title: 'AIGC动画 02',
+    meta: 'SCENE / LIGHTING',
+    src: '/videos/aigc-02.mp4',
+    note: '视频文件暂时无法加载，请确认 public/videos/aigc-02.mp4 是否存在。',
+  },
+  {
+    title: 'AIGC动画 03',
+    meta: 'BRAND FILM TEST',
+    src: '/videos/aigc-03.mp4',
+    note: '视频文件暂时无法加载，请确认 public/videos/aigc-03.mp4 是否存在。',
+  },
+]
+
+const brandVisualImages = [
+  {
+    title: '品牌视觉封面',
+    meta: 'AIGC & BRAND VISUAL',
+    src: '/images/brand/brand-01.jpg',
+    note: '把第 1 张品牌视觉图片放到 public/images/brand/brand-01.jpg 后即可显示。',
+  },
+  {
+    title: '产品场景系统',
+    meta: 'PRODUCT IMAGE',
+    src: '/images/brand/brand-02.jpg',
+    note: '把第 2 张品牌视觉图片放到 public/images/brand/brand-02.jpg 后即可显示。',
+  },
+  {
+    title: '活动版式延展',
+    meta: 'LAYOUT DESIGN',
+    src: '/images/brand/brand-03.jpg',
+    note: '把第 3 张品牌视觉图片放到 public/images/brand/brand-03.jpg 后即可显示。',
+  },
+  {
+    title: '视觉细节延展',
+    meta: 'VISUAL DETAIL',
+    src: '/images/brand/brand-04.jpg',
+    note: '把第 4 张品牌视觉图片放到 public/images/brand/brand-04.jpg 后即可显示。',
+  },
+]
+
+const galleryProjects = {
+  '02': {
+    eyebrow: 'BRAND VISUAL CASE',
+    title: 'AIGC与品牌视觉',
+    description: '以生成式影像、品牌主视觉与电商内容为核心，搭建统一但具有延展性的视觉系统。这里适合放项目封面、过程图、细节图与最终落地画面。',
+    tags: ['AIGC', 'BRAND', 'LAYOUT'],
+    images: brandVisualImages,
+  },
+  '03': {
+    eyebrow: 'ILLUSTRATION CASE',
+    title: '平面插画',
+    layout: 'petal',
+    description: '围绕人物、产品与社交内容场景展开插画视觉表达，适合展示平面插画、IP 形象、节日海报与内容延展画面。',
+    tags: ['ILLUSTRATION', 'POSTER', 'SOCIAL'],
+    images: [
+      {
+        title: '平面插画 01',
+        meta: 'GRAPHIC ILLUSTRATION',
+        src: '/images/illustration/illustration-01.png',
+        note: '图片文件暂时无法加载，请确认 public/images/illustration/illustration-01.png 是否存在。',
+      },
+      {
+        title: '平面插画 02',
+        meta: 'CHARACTER DESIGN',
+        src: '/images/illustration/illustration-02.png',
+        note: '图片文件暂时无法加载，请确认 public/images/illustration/illustration-02.png 是否存在。',
+      },
+      {
+        title: '平面插画 03',
+        meta: 'POSTER SYSTEM',
+        src: '/images/illustration/illustration-03.png',
+        note: '图片文件暂时无法加载，请确认 public/images/illustration/illustration-03.png 是否存在。',
+      },
+      {
+        title: '平面插画 04',
+        meta: 'CONTENT DESIGN',
+        src: '/images/illustration/illustration-04.png',
+        note: '图片文件暂时无法加载，请确认 public/images/illustration/illustration-04.png 是否存在。',
+      },
+      {
+        title: '平面插画 05',
+        meta: 'GRAPHIC ILLUSTRATION',
+        src: '/images/illustration/illustration-05.png',
+        note: '图片文件暂时无法加载，请确认 public/images/illustration/illustration-05.png 是否存在。',
+      },
+      {
+        title: '平面插画 06',
+        meta: 'GRAPHIC ILLUSTRATION',
+        src: '/images/illustration/illustration-06.png',
+        note: '图片文件暂时无法加载，请确认 public/images/illustration/illustration-06.png 是否存在。',
+      },
+      {
+        title: '平面插画 07',
+        meta: 'GRAPHIC ILLUSTRATION',
+        src: '/images/illustration/illustration-07.png',
+        note: '图片文件暂时无法加载，请确认 public/images/illustration/illustration-07.png 是否存在。',
+      },
+      {
+        title: '平面插画 08',
+        meta: 'GRAPHIC ILLUSTRATION',
+        src: '/images/illustration/illustration-08.png',
+        note: '图片文件暂时无法加载，请确认 public/images/illustration/illustration-08.png 是否存在。',
+      },
+      {
+        title: '平面插画 09',
+        meta: 'GRAPHIC ILLUSTRATION',
+        src: '/images/illustration/illustration-09.jpg',
+        note: '图片文件暂时无法加载，请确认 public/images/illustration/illustration-09.jpg 是否存在。',
+      },
+      {
+        title: '平面插画 10',
+        meta: 'GRAPHIC ILLUSTRATION',
+        src: '/images/illustration/illustration-10.jpg',
+        note: '图片文件暂时无法加载，请确认 public/images/illustration/illustration-10.jpg 是否存在。',
+      },
+      {
+        title: '平面插画 11',
+        meta: 'GRAPHIC ILLUSTRATION',
+        src: '/images/illustration/illustration-11.jpg',
+        note: '图片文件暂时无法加载，请确认 public/images/illustration/illustration-11.jpg 是否存在。',
+      },
+      {
+        title: '平面插画 12',
+        meta: 'GRAPHIC ILLUSTRATION',
+        src: '/images/illustration/illustration-12.jpg',
+        note: '图片文件暂时无法加载，请确认 public/images/illustration/illustration-12.jpg 是否存在。',
+      },
+      {
+        title: '平面插画 13',
+        meta: 'GRAPHIC ILLUSTRATION',
+        src: '/images/illustration/illustration-13.jpg',
+        note: '图片文件暂时无法加载，请确认 public/images/illustration/illustration-13.jpg 是否存在。',
+      },
+      {
+        title: '平面插画 14',
+        meta: 'GRAPHIC ILLUSTRATION',
+        src: '/images/illustration/illustration-14.jpg',
+        note: '图片文件暂时无法加载，请确认 public/images/illustration/illustration-14.jpg 是否存在。',
+      },
+    ],
+  },
+  '04': {
+    eyebrow: 'CREATIVE PROMOTION CASE',
+    title: '创意宣传',
+    description: '从传播主题、视觉钩子到社交媒体触点，展示创意宣传项目中的主画面、系列 KV、活动延展与落地物料。',
+    tags: ['CAMPAIGN', 'KV', 'PROMOTION'],
+    images: [
+      {
+        title: '创意宣传封面',
+        meta: 'CREATIVE PROMOTION',
+        src: '/images/promo/promo-01.jpg',
+        note: '把第 1 张创意宣传图片放到 public/images/promo/promo-01.jpg 后即可显示。',
+      },
+      {
+        title: '主视觉 KV',
+        meta: 'CAMPAIGN KV',
+        src: '/images/promo/promo-02.jpg',
+        note: '把第 2 张创意宣传图片放到 public/images/promo/promo-02.jpg 后即可显示。',
+      },
+      {
+        title: '社交媒体海报',
+        meta: 'SOCIAL MEDIA',
+        src: '/images/promo/promo-03.jpg',
+        note: '把第 3 张创意宣传图片放到 public/images/promo/promo-03.jpg 后即可显示。',
+      },
+      {
+        title: '物料延展',
+        meta: 'VISUAL EXTENSION',
+        src: '/images/promo/promo-04.jpg',
+        note: '把第 4 张创意宣传图片放到 public/images/promo/promo-04.jpg 后即可显示。',
+      },
+    ],
+  },
+}
+
 const capabilityModules = [
-  '视觉叙事', 'AI 创意工作流', '品牌视觉', '商业设计', '内容运营',
-  '生成式影像', '版式设计', '社交媒体', '动态视觉', '创意策划',
+  {
+    id: '01',
+    title: '完整项目主导能力',
+    type: 'CORE',
+    points: ['需求拆解', '视觉方向', '落地交付'],
+  },
+  {
+    id: '02',
+    title: '品牌视觉体系搭建',
+    type: 'CORE',
+    points: ['风格识别', '视觉规范', '传播一致'],
+    featured: true,
+  },
+  {
+    id: '03',
+    title: 'AI 设计提效',
+    type: 'SYSTEM',
+    points: ['AIGC 图像', '动态分镜', '创意验证'],
+  },
+  {
+    id: '04',
+    title: '设计管理统筹',
+    type: 'SYSTEM',
+    points: ['进度管理', '素材归档', '标准复用'],
+  },
+  {
+    id: '05',
+    title: '跨部门协同',
+    type: 'SYSTEM',
+    points: ['沟通转译', '内容运营', '商业转化'],
+  },
 ]
 
 const timeline = [
@@ -109,8 +321,285 @@ function ProjectVisual({ project }) {
       <div className="orb orb-small" />
       <div className="orbit orbit-one" />
       <div className="orbit orbit-two" />
-      <span className="visual-tag">{project.tag}</span>
+      {project.tag ? <span className="visual-tag">{project.tag}</span> : null}
       <span className="visual-coordinate">23°07′ N / 113°15′ E</span>
+    </div>
+  )
+}
+
+function VideoShowcaseModal({ open, videos, activeIndex, onSelect, onClose }) {
+  const [videoErrors, setVideoErrors] = useState({})
+
+  useEffect(() => {
+    if (open) setVideoErrors({})
+  }, [open])
+
+  if (!open) return null
+  const activeVideo = videos[activeIndex] || videos[0]
+  const canPlayVideo = activeVideo.src && !videoErrors[activeIndex]
+
+  return (
+    <div className="video-modal" role="dialog" aria-modal="true" aria-label="AIGC 视频展示">
+      <button className="video-modal-backdrop" type="button" onClick={onClose} aria-label="关闭视频展示" />
+      <div className="video-modal-panel">
+        <div className="video-modal-top">
+          <div>
+            <span>AIGC VIDEO SHOWCASE</span>
+            <h3>{activeVideo.title}</h3>
+          </div>
+          <button className="video-close" type="button" onClick={onClose} aria-label="关闭">×</button>
+        </div>
+
+        <div className="video-modal-body">
+          <div className="video-stage">
+            {canPlayVideo ? (
+              <video
+                key={activeVideo.src}
+                src={activeVideo.src}
+                controls
+                controlsList="nodownload noplaybackrate"
+                disablePictureInPicture
+                playsInline
+                preload="metadata"
+                onContextMenu={(event) => event.preventDefault()}
+                onError={() => setVideoErrors((current) => ({ ...current, [activeIndex]: true }))}
+              />
+            ) : (
+              <div className="video-placeholder">
+                <i />
+                <strong>VIDEO SLOT</strong>
+                <p>{activeVideo.note}</p>
+              </div>
+            )}
+          </div>
+
+          <div className="video-playlist" aria-label="视频列表">
+            {videos.map((video, index) => (
+              <button
+                className={index === activeIndex ? 'active' : ''}
+                key={video.title}
+                type="button"
+                onClick={() => onSelect(index)}
+              >
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <strong>{video.title}</strong>
+                <em>{video.meta}</em>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function ImageShowcaseModal({ open, gallery, activeIndex, onSelect, onClose }) {
+  const [imageErrors, setImageErrors] = useState({})
+  const [zoomImageIndex, setZoomImageIndex] = useState(null)
+
+  useEffect(() => {
+    if (open) {
+      setImageErrors({})
+      setZoomImageIndex(null)
+    }
+  }, [open])
+
+  if (!open) return null
+  const images = gallery?.images || []
+  const activeImage = images[activeIndex] || images[0]
+  if (!activeImage) return null
+  const canShowImage = activeImage.src && !imageErrors[activeIndex]
+  const isSliderLayout = gallery.layout === 'slider'
+  const isShuffleLayout = gallery.layout === 'shuffle'
+  const isPetalLayout = gallery.layout === 'petal'
+  const goToPrevImage = () => onSelect((activeIndex - 1 + images.length) % images.length)
+  const goToNextImage = () => onSelect((activeIndex + 1) % images.length)
+  const shuffleStack = [0, 1, 2].map((offset) => {
+    const index = (activeIndex + offset) % images.length
+    return { image: images[index], index, position: offset === 0 ? 'front' : offset === 1 ? 'middle' : 'back' }
+  })
+  const petalItems = images.map((image, index) => {
+    const total = images.length
+    let delta = index - activeIndex
+    if (delta > total / 2) delta -= total
+    if (delta < -total / 2) delta += total
+    const distance = Math.abs(delta)
+    const isActive = index === activeIndex
+    const x = delta * 156
+    const y = 42 + distance * 18
+    const scale = Math.max(0.46, 1 - distance * 0.095)
+    const opacity = distance > 5 ? 0 : Math.max(0.16, 1 - distance * 0.16)
+    return {
+      image,
+      index,
+      isActive,
+      style: {
+        '--petal-x': `${x.toFixed(1)}px`,
+        '--petal-y': `${y.toFixed(1)}px`,
+        '--petal-r': `${(delta * -4.8).toFixed(1)}deg`,
+        '--petal-s': scale.toFixed(3),
+        '--petal-o': opacity.toFixed(3),
+        '--petal-z': isActive ? 80 : 60 - distance,
+      },
+    }
+  })
+
+  const renderImageSlide = (image, index) => {
+    const canRender = image.src && !imageErrors[index]
+    return canRender ? (
+      <img
+        key={image.src}
+        src={image.src}
+        alt={image.title}
+        onError={() => setImageErrors((current) => ({ ...current, [index]: true }))}
+      />
+    ) : (
+      <div className="gallery-placeholder">
+        <span>{String(index + 1).padStart(2, '0')}</span>
+        <strong>IMAGE SLOT</strong>
+        <p>{image.note}</p>
+      </div>
+    )
+  }
+
+  return (
+    <div className="video-modal gallery-modal" role="dialog" aria-modal="true" aria-label={`${gallery.title} 图片展示`}>
+      <button className="video-modal-backdrop" type="button" onClick={onClose} aria-label="关闭图片展示" />
+      <div className={`video-modal-panel gallery-panel ${isPetalLayout ? 'is-petal-panel' : ''}`}>
+        <div className={`video-modal-top ${isPetalLayout ? 'is-compact' : ''}`}>
+          <div>
+            <span>{gallery.eyebrow}</span>
+            <h3>{gallery.title}</h3>
+          </div>
+          <button className="video-close" type="button" onClick={onClose} aria-label="关闭">×</button>
+        </div>
+
+        <div className={`gallery-body ${isSliderLayout ? 'is-slider' : ''} ${isShuffleLayout ? 'is-shuffle' : ''} ${isPetalLayout ? 'is-petal' : ''}`}>
+          <div className="gallery-stage">
+            {isSliderLayout ? (
+              <div className="illustration-slider" aria-label="平面插画滑动图片展示">
+                <div className="illustration-track" style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
+                  {images.map((image, index) => (
+                    <div className="illustration-slide" key={image.title}>
+                      {renderImageSlide(image, index)}
+                    </div>
+                  ))}
+                </div>
+                <div className="slider-counter">{String(activeIndex + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}</div>
+                <div className="slider-controls">
+                  <button type="button" onClick={goToPrevImage} aria-label="查看上一张图片">←</button>
+                  <button type="button" onClick={goToNextImage} aria-label="查看下一张图片">→</button>
+                </div>
+              </div>
+            ) : isShuffleLayout ? (
+              <div className="illustration-shuffle" aria-label="平面插画卡片洗牌展示">
+                <div className="shuffle-card-stack">
+                  {shuffleStack.map(({ image, index, position }) => (
+                    <button
+                      className={`shuffle-image-card ${position}`}
+                      key={`${image.title}-${index}`}
+                      type="button"
+                      onClick={goToNextImage}
+                      aria-label="切换下一张插画"
+                    >
+                      {renderImageSlide(image, index)}
+                    </button>
+                  ))}
+                </div>
+                <div className="slider-counter">{String(activeIndex + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}</div>
+                <div className="slider-controls">
+                  <button type="button" onClick={goToPrevImage} aria-label="查看上一张图片">←</button>
+                  <button type="button" onClick={goToNextImage} aria-label="查看下一张图片">→</button>
+                </div>
+                <p className="shuffle-hint">CLICK CARD TO SHUFFLE</p>
+              </div>
+            ) : isPetalLayout ? (
+              <div className="illustration-petal" aria-label="平面插画花瓣式图片展示">
+                <div className="petal-cloud">
+                  {petalItems.map(({ image, index, isActive, style }) => (
+                    <button
+                      className={`petal-image-card ${isActive ? 'active' : ''}`}
+                      key={image.title}
+                      type="button"
+                      style={style}
+                      onClick={() => {
+                        onSelect(index)
+                        setZoomImageIndex(index)
+                      }}
+                      aria-label={`放大查看 ${image.title}`}
+                    >
+                      {renderImageSlide(image, index)}
+                    </button>
+                  ))}
+                </div>
+                <div className="petal-footer">
+                  <span>{String(activeIndex + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}</span>
+                  <p>CLICK IMAGE TO VIEW</p>
+                  <div className="slider-controls">
+                    <button type="button" onClick={goToPrevImage} aria-label="查看上一张图片">←</button>
+                    <button type="button" onClick={goToNextImage} aria-label="查看下一张图片">→</button>
+                  </div>
+                </div>
+              </div>
+            ) : canShowImage ? (
+              renderImageSlide(activeImage, activeIndex)
+            ) : (
+              <div className="gallery-placeholder">
+                <span>{String(activeIndex + 1).padStart(2, '0')}</span>
+                <strong>IMAGE SLOT</strong>
+                <p>{activeImage.note}</p>
+              </div>
+            )}
+          </div>
+
+          {!isPetalLayout ? <aside className="gallery-info">
+            <span className="gallery-index">{String(activeIndex + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}</span>
+            <h4>{activeImage.title}</h4>
+            <p>{gallery.description}</p>
+            <div className="gallery-tags">
+              {gallery.tags.map((tag) => <span key={tag}>{tag}</span>)}
+            </div>
+          </aside> : null}
+
+          {!isSliderLayout && !isShuffleLayout && !isPetalLayout ? (
+            <div className="gallery-thumbs" aria-label="图片列表">
+              {images.map((image, index) => (
+                <button
+                  className={index === activeIndex ? 'active' : ''}
+                  key={image.title}
+                  type="button"
+                  onClick={() => onSelect(index)}
+                >
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                  <strong>{image.title}</strong>
+                  <em>{image.meta}</em>
+                </button>
+              ))}
+            </div>
+          ) : null}
+        </div>
+      </div>
+      {isPetalLayout && zoomImageIndex !== null && images[zoomImageIndex] ? (
+        <div className="petal-zoom-layer" role="dialog" aria-modal="false" aria-label="image preview">
+          <button
+            className="petal-zoom-backdrop"
+            type="button"
+            onClick={() => setZoomImageIndex(null)}
+            aria-label="close image preview"
+          />
+          <div className="petal-zoom-image">
+            {renderImageSlide(images[zoomImageIndex], zoomImageIndex)}
+          </div>
+          <button
+            className="petal-zoom-close"
+            type="button"
+            onClick={() => setZoomImageIndex(null)}
+            aria-label="close"
+          >
+            ×
+          </button>
+        </div>
+      ) : null}
     </div>
   )
 }
@@ -118,6 +607,11 @@ function ProjectVisual({ project }) {
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [navScrolled, setNavScrolled] = useState(false)
+  const [videoModalOpen, setVideoModalOpen] = useState(false)
+  const [activeVideoIndex, setActiveVideoIndex] = useState(0)
+  const [galleryModalOpen, setGalleryModalOpen] = useState(false)
+  const [activeGalleryIndex, setActiveGalleryIndex] = useState(0)
+  const [activeGalleryProjectId, setActiveGalleryProjectId] = useState('02')
 
   useEffect(() => {
     const updateNav = () => setNavScrolled(window.scrollY >= window.innerHeight - 80)
@@ -167,6 +661,19 @@ function App() {
     }
   }, [])
 
+  useEffect(() => {
+    document.body.classList.toggle('modal-open', videoModalOpen || galleryModalOpen)
+    const handleEscape = (event) => {
+      if (event.key === 'Escape') setVideoModalOpen(false)
+      if (event.key === 'Escape') setGalleryModalOpen(false)
+    }
+    window.addEventListener('keydown', handleEscape)
+    return () => {
+      document.body.classList.remove('modal-open')
+      window.removeEventListener('keydown', handleEscape)
+    }
+  }, [videoModalOpen, galleryModalOpen])
+
   const scrollTo = (id) => {
     document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' })
     setMenuOpen(false)
@@ -194,6 +701,26 @@ function App() {
     card.style.setProperty('--tilt-scale', '1')
     card.style.setProperty('--glow-x', '50%')
     card.style.setProperty('--glow-y', '28%')
+  }
+
+  const canOpenProject = (project) => project.id === '01' || Boolean(galleryProjects[project.id])
+
+  const openProjectVideos = (project) => {
+    if (project.id !== '01') return
+    setActiveVideoIndex(0)
+    setVideoModalOpen(true)
+  }
+
+  const openProjectGallery = (project) => {
+    if (!galleryProjects[project.id]) return
+    setActiveGalleryProjectId(project.id)
+    setActiveGalleryIndex(0)
+    setGalleryModalOpen(true)
+  }
+
+  const openProjectShowcase = (project) => {
+    if (project.id === '01') openProjectVideos(project)
+    if (galleryProjects[project.id]) openProjectGallery(project)
   }
 
   return (
@@ -285,7 +812,7 @@ function App() {
             <div className="portrait-wrap">
               <div className="portrait tilted-portrait" onPointerMove={handlePortraitTilt} onPointerLeave={resetPortraitTilt}>
                 <div className="portrait-halo" />
-                <img className="portrait-avatar" src="/about-avatar-peace.png" alt="黄子盈 3D 形象" />
+                <img className="portrait-avatar" src="/about-avatar-chair.png" alt="黄子盈 3D 形象" />
                 <div className="portrait-label">ZIYING HUANG<br />VISUAL & AI DESIGNER</div>
               </div>
               <span className="portrait-note">梦想是去任何想去的地方</span>
@@ -336,7 +863,7 @@ function App() {
           <div className="works-heading">
             <h2>VISUAL<br /><em>DISPLAY</em></h2>
             <div className="works-falling-character" aria-hidden="true">
-              <img src="/hero-qgirl-falling-alpha.png" alt="" />
+              <img src="/works-character-crouch.png" alt="" />
             </div>
             <p>一些关于速度、质感、内容与未来的视觉实验。<br />真实项目图片将在下一阶段替换。</p>
           </div>
@@ -356,12 +883,31 @@ function App() {
                 animated
                 colors={project.colors}
               >
-                <article className="project-card-content">
+                <article
+                  className={`project-card-content ${project.id === '01' ? 'is-video-trigger' : ''} ${galleryProjects[project.id] ? 'is-gallery-trigger' : ''}`}
+                  role={canOpenProject(project) ? 'button' : undefined}
+                  tabIndex={canOpenProject(project) ? 0 : undefined}
+                  onClick={() => openProjectShowcase(project)}
+                  onKeyDown={(event) => {
+                    if (canOpenProject(project) && (event.key === 'Enter' || event.key === ' ')) {
+                      event.preventDefault()
+                      openProjectShowcase(project)
+                    }
+                  }}
+                >
                   <ProjectVisual project={project} />
                   <div className="project-meta">
                     <div><span>{project.type}</span><h3>{project.title}</h3></div>
                     <p>{project.caption}</p>
-                    <button aria-label={`查看 ${project.title}`}><Arrow diagonal /></button>
+                    <button
+                      aria-label={`查看 ${project.title}`}
+                      onClick={(event) => {
+                        event.stopPropagation()
+                        openProjectShowcase(project)
+                      }}
+                    >
+                      <Arrow diagonal />
+                    </button>
                   </div>
                 </article>
               </BorderGlow>
@@ -372,21 +918,34 @@ function App() {
 
       <section className="strengths section" id="strengths">
         <div className="shell">
-          <div className="section-kicker"><span>04</span><p>CAPABILITIES / APPROACH</p></div>
-          <div className="capability-orbit">
-            <div className="capability-center">
-              <h2>不止于做一张<br /><em>好看的图。</em></h2>
+          <div className="section-kicker"><span>04</span><p>个人优势 / 创作方法</p></div>
+          <div className="capability-layout">
+            <div className="capability-card-grid">
+              {capabilityModules.map((item) => (
+                <button
+                  className={`capability-card ${item.featured ? 'featured' : ''}`}
+                  key={item.id}
+                  onClick={() => scrollTo('#works')}
+                  aria-label={`查看${item.title}相关项目`}
+                >
+                  <span className="capability-no">{item.id}</span>
+                  <span className="capability-type">{item.type}</span>
+                  <h3>{item.title}<i /></h3>
+                  <div className="capability-tags" aria-hidden="true">
+                    {item.points.map((point) => <em key={point}>{point}</em>)}
+                  </div>
+                  <span className="capability-shape" aria-hidden="true" />
+                </button>
+              ))}
             </div>
-            {capabilityModules.map((label, index) => (
-              <button
-                className={`capability-tile tile-${index + 1}`}
-                key={label}
-                onClick={() => scrollTo('#works')}
-                aria-label={`查看${label}相关项目`}
-              >
-                <img src="/hero-hands-v2.png" alt="" aria-hidden="true" />
-              </button>
-            ))}
+            <div className="capability-copy">
+              <span className="eyebrow">CAPABILITIES / APPROACH</span>
+              <h2>DESIGN<br /><em>ADVANTAGE</em></h2>
+              <p>
+                从视觉概念、品牌调性到 AIGC 创意生产，我更关注设计如何被看见、被理解、被使用，
+                把想法整理成可复用、可执行、可持续优化的创意系统。
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -419,7 +978,7 @@ function App() {
         </div>
         <div className="noise" aria-hidden="true" />
         <div className="shell contact-inner">
-          <div className="section-kicker light"><span>05</span><p>CONTACT / COLLABORATION</p></div>
+          <div className="section-kicker light"><span>05</span><p>联系我 / 合作沟通</p></div>
           <div className="contact-main">
             <p className="eyebrow">HAVE AN IDEA IN MIND?</p>
             <h2><span>LOVE</span><br /><em>AND</em><br /><span>LEARN.</span></h2>
@@ -432,6 +991,21 @@ function App() {
           </div>
         </div>
       </footer>
+
+      <VideoShowcaseModal
+        open={videoModalOpen}
+        videos={aigcVideos}
+        activeIndex={activeVideoIndex}
+        onSelect={setActiveVideoIndex}
+        onClose={() => setVideoModalOpen(false)}
+      />
+      <ImageShowcaseModal
+        open={galleryModalOpen}
+        gallery={galleryProjects[activeGalleryProjectId]}
+        activeIndex={activeGalleryIndex}
+        onSelect={setActiveGalleryIndex}
+        onClose={() => setGalleryModalOpen(false)}
+      />
     </main>
   )
 }
