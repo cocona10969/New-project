@@ -294,37 +294,73 @@ const capabilityModules = [
     title: '完整项目主导能力',
     type: 'CORE',
     points: ['需求拆解', '视觉方向', '落地交付'],
+    insights: ['快速理解项目目标与人群', '建立清晰视觉方向与节奏', '推进从概念到完稿的闭环'],
   },
   {
     id: '02',
     title: '品牌视觉体系搭建',
     type: 'CORE',
     points: ['风格识别', '视觉规范', '传播一致'],
+    insights: ['提炼品牌关键词与画面气质', '统一字体、色彩与版式规则', '让多渠道内容保持识别度'],
   },
   {
     id: '03',
     title: 'AI 设计提效',
     type: 'SYSTEM',
     points: ['AIGC 图像', '动态分镜', '创意验证'],
+    insights: ['用 AI 扩展视觉方案数量', '辅助完成分镜与风格测试', '快速验证概念与内容方向'],
   },
   {
     id: '04',
     title: '设计管理统筹',
     type: 'SYSTEM',
     points: ['进度管理', '素材归档', '标准复用'],
+    insights: ['拆分任务并控制交付节点', '沉淀素材库与设计规范', '提升团队协作与复用效率'],
   },
   {
     id: '05',
     title: '跨部门协同',
     type: 'SYSTEM',
     points: ['沟通转译', '内容运营', '商业转化'],
+    insights: ['把需求转化成视觉语言', '理解运营节奏与内容目标', '兼顾审美表达与转化结果'],
   },
 ]
 
 const timeline = [
-  { date: '2025.10 — NOW', company: '中山蓓盾运动科技有限公司', role: '平面设计师', detail: '品牌视觉全案 / 赛事合作 / AIGC 产品影像 / 小红书创意' },
-  { date: '2021.07 — 2025.09', company: '裕和科技有限公司', role: '视觉设计师', detail: '电商视觉 / 商业短视频分镜 / 营销活动 / 小红书 0→1' },
-  { date: '2019.07 — 2021.05', company: '创者皮具有限公司', role: '跨境电商美工', detail: '跨境电商视觉定位 / 首页与详情页 / 平面广告' },
+  {
+    date: '2025.10 — NOW',
+    company: '中山蓓盾运动科技有限公司',
+    role: '平面设计师',
+    detail: '品牌视觉全案 / 赛事合作 / AIGC 产品影像 / 小红书创意',
+    duties: [
+      '主导并独立执行核心营销节点的品牌视觉全案，运用 AI 辅助生成极具视觉冲击力的超高精度产品特写与海报，大幅提升电商平台及小红书矩阵号的点击与转化率。',
+      '负责各项马拉松、越野赛等大型赛事项目线上线下的核心视觉合作设计，结合 AI 工具快速迭代概念方案，确保品牌调性准确、高效传达并为品牌赋能，参与赛事和品牌合作的文创产品生产到落地。',
+      '使用主流 AI 工具（如即梦、Midjourney、Gemini、ChatGPT 等）独立完成 Prompt 设计、参数调试、素材生成和结果优化。',
+      '负责小红书号的品牌宣传创意，通过 AI 工具规模化产出高颜值的网感图文与海报，提升品牌形象和用户视觉体验。',
+    ],
+  },
+  {
+    date: '2021.07 — 2025.09',
+    company: '裕和科技有限公司',
+    role: '视觉设计师',
+    detail: '电商视觉 / 商业短视频分镜 / 营销活动 / 小红书 0→1',
+    duties: [
+      '独立负责多电商平台的网店整体视觉设计与迭代，在产品主图与详情页优化中，引入 AI 工具重构产品使用场景与氛围背景，确保视觉效果与产品特性相符合，有效提高店铺转化率。',
+      '负责高强度、快节奏的商业短视频分镜脚本策划。主导开发过 15-20 秒的复杂商业向视频脚本，为后期引入 AI 视频模型进行动态生成打下坚实的镜头语言基础。',
+      '与运营团队紧密合作，策划并执行店铺促销及节日活动视觉。确保品牌信息传达的准确性与吸引力。',
+      '负责小红书号的创意设计和策划，有账号 0-1 的小红书运营经验、站外引流经验等。',
+    ],
+  },
+  {
+    date: '2019.07 — 2021.05',
+    company: '创者皮具有限公司',
+    role: '跨境电商美工',
+    detail: '跨境电商视觉定位 / 首页与详情页 / 平面广告',
+    duties: [
+      '负责跨境电商店铺整体视觉风格定位，统筹首页布局、轮播图及详情页制作，保证整体风格的统一性与品牌辨识度。',
+      '负责电商平台平面广告图片制作，收集相关素材，整理、策划相关活动界面，奠定扎实的传统视觉设计功底与排版能力。',
+    ],
+  },
 ]
 
 function ProjectVisual({ project }) {
@@ -627,6 +663,8 @@ function App() {
   const [galleryModalOpen, setGalleryModalOpen] = useState(false)
   const [activeGalleryIndex, setActiveGalleryIndex] = useState(0)
   const [activeGalleryProjectId, setActiveGalleryProjectId] = useState('02')
+  const [activeCareerIndex, setActiveCareerIndex] = useState(null)
+  const [activeCapabilityId, setActiveCapabilityId] = useState(null)
 
   useEffect(() => {
     const updateNav = () => setNavScrolled(window.scrollY >= window.innerHeight - 80)
@@ -886,14 +924,29 @@ function App() {
               <h3>工作经历</h3>
             </div>
             <div className="career-track">
-            {timeline.map((item) => (
-              <article key={item.date}>
+            {timeline.map((item, index) => (
+              <article key={item.date} className={activeCareerIndex === index ? 'career-active' : ''}>
                 <i className="career-node" aria-hidden="true" />
                 <time>{item.date}</time>
                 <div>
-                  <h4>{item.company}</h4>
+                  <button
+                    className="career-company"
+                    type="button"
+                    aria-expanded={activeCareerIndex === index}
+                    onClick={() => setActiveCareerIndex(activeCareerIndex === index ? null : index)}
+                  >
+                    {item.company}
+                  </button>
                   <span>{item.role}</span>
                   <p>{item.detail}</p>
+                  <div className="career-detail-panel" aria-hidden={activeCareerIndex !== index}>
+                    <strong>任职内容</strong>
+                    <ul>
+                      {item.duties.map((duty) => (
+                        <li key={duty}>{duty}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </article>
             ))}
@@ -908,7 +961,7 @@ function App() {
           <div className="works-heading">
             <h2>VISUAL<br /><em>DISPLAY</em></h2>
             <div className="works-falling-character" aria-hidden="true">
-              <img src="/works-character-crouch-cutout.png" alt="" />
+              <img src="/works-character-crouch-new.png" alt="" />
             </div>
             <p>一些关于速度、质感、内容与未来的视觉实验。<br />真实项目图片将在下一阶段替换。</p>
           </div>
@@ -968,14 +1021,22 @@ function App() {
             <div className="capability-card-grid">
               {capabilityModules.map((item) => (
                 <button
-                  className={`capability-card ${item.featured ? 'featured' : ''}`}
+                  className={`capability-card ${item.featured ? 'featured' : ''} ${activeCapabilityId === item.id ? 'is-open' : ''}`}
                   key={item.id}
-                  onClick={() => scrollTo('#works')}
-                  aria-label={`查看${item.title}相关项目`}
+                  onClick={() => setActiveCapabilityId(activeCapabilityId === item.id ? null : item.id)}
+                  aria-expanded={activeCapabilityId === item.id}
+                  aria-label={`查看${item.title}优势说明`}
                 >
                   <span className="capability-no">{item.id}</span>
                   <span className="capability-type">{item.type}</span>
                   <h3>{item.title}<i /></h3>
+                  <span className="capability-bubble-menu" aria-hidden={activeCapabilityId !== item.id}>
+                    {item.insights.map((insight, bubbleIndex) => (
+                      <em key={insight} style={{ '--bubble-index': bubbleIndex }}>
+                        {insight}
+                      </em>
+                    ))}
+                  </span>
                 </button>
               ))}
             </div>
@@ -985,8 +1046,14 @@ function App() {
                 扎实的美术功底、良好的创意思维和理解能力，能及时把握客户需求，善于与人沟通，能够承受压力，能独立完成相关视觉或界面的创意、设计到完稿全套工作流程，保证工作质量。持续关注AI如何重塑创意生产，乐于探索生成式AI的新应用与新方法，具备优秀的跨团队协作能力与自驱力。
               </p>
               <img
+                className="capability-tool-gift"
+                src="/images/character/ai-tools-gift.png"
+                alt=""
+                aria-hidden="true"
+              />
+              <img
                 className="capability-character"
-                src="/images/character/strengths-designer-cutout.png"
+                src="/images/character/strengths-designer-full.png"
                 alt="AI 设计师人物形象"
               />
             </div>
