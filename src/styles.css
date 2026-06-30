@@ -2117,7 +2117,7 @@ body.modal-open {
 .capability-card:nth-child(n+3) .capability-bubble-menu {
   left: clamp(18px, 1.55vw, 28px);
   right: clamp(14px, 1.3vw, 24px);
-  top: clamp(110px, 8vw, 128px);
+  top: clamp(124px, 8.7vw, 142px);
 }
 .capability-card:nth-child(n+3) .capability-bubble-menu em {
   min-width: min(100%, 205px);
@@ -2128,16 +2128,16 @@ body.modal-open {
 }
 .capability-card:nth-child(n+3) .capability-bubble-menu em:nth-child(1) {
   --bubble-x: 18px;
-  --bubble-y: -12px;
+  --bubble-y: 0px;
 }
 .capability-card:nth-child(n+3) .capability-bubble-menu em:nth-child(2) {
   --bubble-x: 0px;
-  --bubble-y: 12px;
+  --bubble-y: 16px;
   margin-left: 0;
 }
 .capability-card:nth-child(n+3) .capability-bubble-menu em:nth-child(3) {
   --bubble-x: 34px;
-  --bubble-y: 34px;
+  --bubble-y: 30px;
   margin-left: 0;
 }
 .capability-card.is-open .capability-bubble-menu em {
